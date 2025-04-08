@@ -55,6 +55,7 @@
     <Compile Include="Scene\Dungeon01Scene.cs" />
     <Compile Include="Scene\MarketScene.cs" />
     <Compile Include="Scene\NewbieTownScene.cs" />
+    <Compile Include="Scene\SellScene.cs" />
     <Compile Include="Scene\TestScene.cs" />
     <Compile Include="Scene\TitleScene.cs" />
   </ItemGroup>

@@ -211,7 +211,7 @@ namespace TextRPG
         /// </summary>
         public void PrintAll()
         {
-            Console.WriteLine("=====================가지고있는 아이템======================");
+            Console.WriteLine("====================가지고있는 아이템======================");
             if (items.Count == 0)
             {
                 Console.WriteLine("현재 가지고 있는 아이템없음");

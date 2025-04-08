@@ -14,8 +14,10 @@ namespace TextRPG.Scene
         {
             Console.WriteLine("현재 있는 장소 : 상점");
             Console.WriteLine();
-            Console.WriteLine("1. 타이틀로 돌아가기");
+            Console.WriteLine("1. 마을로 돌아가기");
+            Console.WriteLine("2. 상점 둘러보기");
             Console.WriteLine("선택지를 입력하세요 : ");
+            Game.Player.Inventory.PrintAll();
         }
         public override void Input()
         {
@@ -32,8 +34,12 @@ namespace TextRPG.Scene
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Util.PressAnyKey("타이틀로 돌아갑니다");
-                    Game.ChangeScene("Title");
+                    Util.PressAnyKey("마을로 돌아갑니다");
+                    Game.ChangeScene("Newbie");
+                    break;
+                case ConsoleKey.D2:
+                    Util.PressAnyKey("상점을 둘러봅니다");
+                    Game.ChangeScene("Sell");
                     break;
             }
         }

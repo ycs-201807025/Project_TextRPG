@@ -71,6 +71,8 @@ namespace TextRPG
             sceneDic.Add("Newbie", new NewbieTownScene());
             sceneDic.Add("Dungeon01", new Dungeon01Scene());
             sceneDic.Add("Market", new MarketScene());
+            sceneDic.Add("Sell", new SellScene());
+
 
             //시작시 맨 처음 나타날 씬
             curScene = sceneDic["Title"];

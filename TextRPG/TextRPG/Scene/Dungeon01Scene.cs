@@ -15,10 +15,11 @@ namespace TextRPG.Scene
             Console.WriteLine("현재 있는 장소 : 던전초입");
             Console.WriteLine("나오는 몬스터 : 슬라임");
             Console.WriteLine();
-            Console.WriteLine("1. 앞으로 간다");
-            Console.WriteLine("2. 주변을 둘러본다");
+            Console.WriteLine("1. 앞으로 간다(미구현)");
+            Console.WriteLine("2. 주변을 둘러본다(미구현)");
             Console.WriteLine("3. 마을로 돌아간다");
             Console.WriteLine("선택지를 입력하세요 : ");
+            Game.Player.Inventory.PrintAll();
         }
         public override void Input()
         {
