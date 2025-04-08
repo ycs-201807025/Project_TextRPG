@@ -26,10 +26,20 @@ namespace TextRPG
             {
                 Console.Clear();
                 curScene.Render();
+                Console.WriteLine();
                 curScene.Input();
+                Console.WriteLine();
                 curScene.Update();
+                Console.WriteLine();
                 curScene.Result();
             }
+        }
+        /// <summary>
+        /// 장면 전환을 위해 만듬
+        /// </summary>
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
         }
         /// <summary>
         /// 게임 시작 작업 
@@ -40,6 +50,7 @@ namespace TextRPG
 
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new TitleScene());
+            sceneDic.Add("Test", new TestScene());
 
             curScene = sceneDic["Title"];
             

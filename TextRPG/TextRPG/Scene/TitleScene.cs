@@ -33,7 +33,7 @@ namespace TextRPG.Scene
 
         public override void Result()
         {
-            
+            Game.ChangeScene("Test");
         }
 
       
