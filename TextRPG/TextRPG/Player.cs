@@ -10,7 +10,7 @@ namespace TextRPG
     {
 
         private Inventory inventory;
-        public Inventory Inventory { get { return Inventory; } }
+        public Inventory Inventory { get { return inventory; } }
 
         private int curHP;
         public int CurHP { get { return curHP; } }
