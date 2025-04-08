@@ -10,6 +10,8 @@ namespace TextRPG
     {
         static void Main(string[] args)
         {
+            //게임 동작
+            Game.Run();
         }
     }
 }
