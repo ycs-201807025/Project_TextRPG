@@ -14,6 +14,9 @@ namespace TextRPG
         private static BaseScene curScene;
         public static string prevSceneName;
 
+        private static Player player;
+        public static Player Player { get { return player; } }
+
 
         private static bool gameOver;
 
@@ -56,7 +59,11 @@ namespace TextRPG
         /// </summary>
         private static void Start()
         {
+            //게임 설정
             gameOver = false;
+
+            //플레이어 설정
+            player = new Player();
 
             //씬을 만들때마다 추가
             sceneDic = new Dictionary<string, BaseScene>();
