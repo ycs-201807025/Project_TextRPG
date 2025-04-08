@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 namespace TextRPG.Scene
 {
     /// <summary>
-    /// 게임 시작시 나오는 타이틀의 씬 BaseScene을 상속받는다
+    /// 게임 시작시 나오는 타이틀의 씬 
     /// </summary>
     public class TitleScene : BaseScene
     {
+        public TitleScene()
+        {
+            name = "Title";
+        }
         public override void Render()
         {
             Console.WriteLine("☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★");
@@ -33,7 +37,7 @@ namespace TextRPG.Scene
 
         public override void Result()
         {
-            Game.ChangeScene("Test");
+            Game.ChangeScene("Newbie");
         }
 
       

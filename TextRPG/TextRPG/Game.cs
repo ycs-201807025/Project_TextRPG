@@ -12,6 +12,8 @@ namespace TextRPG
     {
         private static Dictionary<string, BaseScene> sceneDic;
         private static BaseScene curScene;
+        public static string prevSceneName;
+
 
         private static bool gameOver;
 
@@ -24,13 +26,18 @@ namespace TextRPG
 
             while (gameOver == false)
             {
+                //씬이 넘어갈때마다 화면 클리어
                 Console.Clear();
+                //렌더 작업
                 curScene.Render();
                 Console.WriteLine();
+                //인풋 작업
                 curScene.Input();
                 Console.WriteLine();
+                //업데이트 작업
                 curScene.Update();
                 Console.WriteLine();
+                //결과 작업
                 curScene.Result();
             }
         }
@@ -39,7 +46,10 @@ namespace TextRPG
         /// </summary>
         public static void ChangeScene(string sceneName)
         {
+            prevSceneName = curScene.name;
+            curScene.Exit();
             curScene = sceneDic[sceneName];
+            curScene.Enter();
         }
         /// <summary>
         /// 게임 시작 작업 
@@ -48,10 +58,14 @@ namespace TextRPG
         {
             gameOver = false;
 
+            //씬을 만들때마다 추가
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new TitleScene());
-            sceneDic.Add("Test", new TestScene());
+            sceneDic.Add("Newbie", new NewbieTownScene());
+            sceneDic.Add("Dungeon01", new Dungeon01Scene());
+            sceneDic.Add("Market", new MarketScene());
 
+            //시작시 맨 처음 나타날 씬
             curScene = sceneDic["Title"];
             
 
