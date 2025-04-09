@@ -10,6 +10,8 @@ namespace TextRPG
     {
         public string name;
         public string description;
+        public string type;
+        
 
         public abstract void Use();
         

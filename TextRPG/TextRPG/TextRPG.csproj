@@ -48,7 +48,11 @@
     <Compile Include="Game.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Items\Armors\Armor.cs" />
+    <Compile Include="Items\Armors\LeatherArmor.cs" />
     <Compile Include="Items\HpPotion.cs" />
+    <Compile Include="Items\Weapons\Weapon.cs" />
+    <Compile Include="Items\Weapons\WoodSword.cs" />
     <Compile Include="Monsters\Monster.cs" />
     <Compile Include="Monsters\MonsterFactory.cs" />
     <Compile Include="Player.cs" />
