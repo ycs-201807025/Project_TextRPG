@@ -17,7 +17,7 @@ namespace TextRPG.Scene
             Console.WriteLine("1. 마을로 돌아가기");
             Console.WriteLine("2. 상점 둘러보기");
             Console.WriteLine("선택지를 입력하세요 : ");
-            Game.Player.Inventory.PrintAll();
+            
         }
         public override void Input()
         {
@@ -26,7 +26,7 @@ namespace TextRPG.Scene
 
         public override void Update()
         {
-
+            Game.Player.Action(input);
         }
 
         public override void Result()

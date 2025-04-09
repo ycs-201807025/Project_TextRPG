@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG.Items.Armors
 {
-    class LeatherArmor : Armor
+    public class LeatherArmor : Armor
     {
         public LeatherArmor()
         {

@@ -21,8 +21,8 @@ namespace TextRPG.Scene
             Console.WriteLine("2. 상점으로 간다");
             Console.WriteLine("3. 휴식을 취한다(미구현)");
             Console.WriteLine("선택지를 입력하세요 : ");
+            Game.PrintInfo();
             
-            Game.Player.Inventory.PrintAll();
         }
         public override void Input()
         {
@@ -31,7 +31,7 @@ namespace TextRPG.Scene
 
         public override void Update()
         {
-
+            Game.Player.Action(input);
         }
 
         public override void Result()

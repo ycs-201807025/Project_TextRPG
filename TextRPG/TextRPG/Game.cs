@@ -54,6 +54,15 @@ namespace TextRPG
             curScene = sceneDic[sceneName];
            
         }
+        public static void PrintInfo()
+        {
+            Console.WriteLine("*************************************");
+            Console.WriteLine("* 플레이어                          *");
+            Console.WriteLine("* HP : {0}\t 방어력 : {1}        *", Player.CurHP, Player.Defence);
+            Console.WriteLine("* 공격력 : {0}\t 방어력 : {1}        *", Player.Attack, Player.Defence);
+            Console.WriteLine("* 마력 : {0}\t 골드 : {1}        *", Player.Intel, Player.Gold);
+            Console.WriteLine("*************************************");
+        }
         /// <summary>
         /// 게임 시작 작업 
         /// </summary>
@@ -78,7 +87,12 @@ namespace TextRPG
             //시작시 맨 처음 나타날 씬
             curScene = sceneDic["Title"];
             
-
+            player = new Player();
+            player.Attack = 10;
+            player.Defence = 10; 
+            player.Intel = 10;
+            player.Gold = 5000;
+            player.MaxHP = 50;
         }
         /// <summary>
         /// 게임 마무리 작업

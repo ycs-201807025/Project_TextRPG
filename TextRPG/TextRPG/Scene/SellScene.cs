@@ -23,7 +23,7 @@ namespace TextRPG.Scene
             Console.WriteLine("=1. {0}                                                  ",potion.name);
             Console.WriteLine("=2. {0}                                                  ",sword.name);
             Console.WriteLine("=3. {0}                                                  ",armor.name);
-            Console.WriteLine("=                                                        ");
+            Console.WriteLine("=4. 돌아간다                                              ");
             Console.WriteLine("=========================================================");
             Console.WriteLine("사고싶은 아이템을 선택하세요 : ");
             Game.Player.Inventory.PrintAll();
@@ -35,7 +35,7 @@ namespace TextRPG.Scene
 
         public override void Update()
         {
-
+            Game.Player.Action(input);
         }
 
         public override void Result()
@@ -50,6 +50,9 @@ namespace TextRPG.Scene
                     break;
                 case ConsoleKey.D3:
                     Game.Player.Inventory.Add(armor);
+                    break;
+                case ConsoleKey.D4:
+                    Game.ChangeScene("Market");
                     break;
             }
         }

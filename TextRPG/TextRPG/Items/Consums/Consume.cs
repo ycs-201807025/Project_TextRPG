@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG.Items.Weapons
+namespace TextRPG.Items.Consums
 {
-    public class Weapon : Item
+    public class Consume : Item
     {
-        public int attack;
 
         public override void Use()
         {

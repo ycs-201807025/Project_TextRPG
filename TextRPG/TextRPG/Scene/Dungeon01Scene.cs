@@ -22,7 +22,7 @@ namespace TextRPG.Scene
             Console.WriteLine("2. 주변을 둘러본다(미구현)");
             Console.WriteLine("3. 마을로 돌아간다");
             Console.WriteLine("선택지를 입력하세요 : ");
-            Game.Player.Inventory.PrintAll();
+            
         }
         public override void Input()
         {
@@ -31,7 +31,7 @@ namespace TextRPG.Scene
 
         public override void Update()
         {
-
+            Game.Player.Action(input);
         }
 
         public override void Result()
@@ -39,17 +39,12 @@ namespace TextRPG.Scene
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Util.PressAnyKey("앞으로 나아갑니다(미구현)");
+                    Util.PressAnyKey("앞으로 나아갑니다");
                     if (random.Next() % 2 == 0)
                     {
                         Monster monster01 = monsterFactory.CreateMonster("슬라임");
                         Console.WriteLine($"몬스터 {monster01.name}이(가) 나타났습니다!");
-                        Console.WriteLine("===== 몬스터 정보 =====");
-                        Console.WriteLine($"레벨: {monster01.level}");
-                        Console.WriteLine($"체력: {monster01.hp}");
-                        Console.WriteLine($"공격력: {monster01.attack}");
-                        Console.WriteLine($"방어력: {monster01.defense}");
-                        Console.WriteLine("======================");
+                        Util.PressAnyKey("전투 시작!");
                         BattleScene battleScene = (BattleScene)Game.sceneDic["Battle"];
                         battleScene.SetMonster(monster01);
                         Game.ChangeScene("Battle");

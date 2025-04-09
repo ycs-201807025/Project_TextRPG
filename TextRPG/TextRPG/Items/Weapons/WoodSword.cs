@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG.Items.Weapons
 {
-    class WoodSword : Weapon
+    public class WoodSword : Weapon
     {
         public WoodSword()
         {
@@ -17,7 +17,7 @@ namespace TextRPG.Items.Weapons
         }
         public override void Use()
         {
-            
+            Game.Player.Attack += 5;
         }
     }
    
