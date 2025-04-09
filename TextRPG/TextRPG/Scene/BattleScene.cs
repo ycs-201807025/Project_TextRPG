@@ -26,7 +26,6 @@ namespace TextRPG.Scene
             Console.WriteLine($"공격력: {currentMonster.attack}");
             Console.WriteLine($"방어력: {currentMonster.defense}");
             Console.WriteLine("=====================");
-            
             Console.WriteLine("1. 공격");
             Console.WriteLine("2. 방어");
             Console.WriteLine("3. 도망");
@@ -46,7 +45,7 @@ namespace TextRPG.Scene
         public override void Update()
         {
             if (input == ConsoleKey.NoName) return; // 입력이 초기화된 경우 아무 동작도 하지 않음
-            Game.Player.Action(input); // 플레이어의 행동 처리
+            Game.Player.Action(input);
         }
         public override void Result()
         {

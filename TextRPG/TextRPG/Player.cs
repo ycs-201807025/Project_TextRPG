@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG.Items;
 
 namespace TextRPG
 {
@@ -29,12 +31,10 @@ namespace TextRPG
         private int intel;
         public int Intel { get { return intel; } set { intel = value; } }
 
-
-
-
         public Player()
         {
             inventory = new Inventory();
+            
             maxHP = 50;
             curHP = maxHP;
         }
