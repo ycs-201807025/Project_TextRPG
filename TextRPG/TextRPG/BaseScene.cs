@@ -18,8 +18,7 @@ namespace TextRPG
         public abstract void Update();
         public abstract void Result();
 
-        public virtual void Enter() { }
-        public virtual void Exit() { }
+        
 
     }
 }

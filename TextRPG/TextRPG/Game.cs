@@ -10,7 +10,7 @@ namespace TextRPG
 {
     public static class Game
     {
-        private static Dictionary<string, BaseScene> sceneDic;
+        public static Dictionary<string, BaseScene> sceneDic;
         private static BaseScene curScene;
         public static string prevSceneName;
 
@@ -50,9 +50,9 @@ namespace TextRPG
         public static void ChangeScene(string sceneName)
         {
             prevSceneName = curScene.name;
-            curScene.Exit();
+            
             curScene = sceneDic[sceneName];
-            curScene.Enter();
+           
         }
         /// <summary>
         /// 게임 시작 작업 
@@ -72,6 +72,7 @@ namespace TextRPG
             sceneDic.Add("Dungeon01", new Dungeon01Scene());
             sceneDic.Add("Market", new MarketScene());
             sceneDic.Add("Sell", new SellScene());
+            sceneDic.Add("Battle", new BattleScene());
 
 
             //시작시 맨 처음 나타날 씬

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG.Monsters;
 
 namespace TextRPG.Scene
 {
     public class Dungeon01Scene : BaseScene
     {
         private ConsoleKey input;
+        Random random = new Random();
+        MonsterFactory monsterFactory = new MonsterFactory();
 
         public override void Render()
         {
@@ -37,7 +40,20 @@ namespace TextRPG.Scene
             {
                 case ConsoleKey.D1:
                     Util.PressAnyKey("앞으로 나아갑니다(미구현)");
-                    Game.ChangeScene("");
+                    if (random.Next() % 2 == 0)
+                    {
+                        Monster monster01 = monsterFactory.CreateMonster("슬라임");
+                        Console.WriteLine($"몬스터 {monster01.name}이(가) 나타났습니다!");
+                        Console.WriteLine("===== 몬스터 정보 =====");
+                        Console.WriteLine($"레벨: {monster01.level}");
+                        Console.WriteLine($"체력: {monster01.hp}");
+                        Console.WriteLine($"공격력: {monster01.attack}");
+                        Console.WriteLine($"방어력: {monster01.defense}");
+                        Console.WriteLine("======================");
+                        BattleScene battleScene = (BattleScene)Game.sceneDic["Battle"];
+                        battleScene.SetMonster(monster01);
+                        Game.ChangeScene("Battle");
+                    }
                     break;
                 case ConsoleKey.D2:
                     Util.PressAnyKey("주변을 둘러봅니다(미구현)");
