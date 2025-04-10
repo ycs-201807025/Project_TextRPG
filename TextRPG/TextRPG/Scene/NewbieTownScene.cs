@@ -22,6 +22,8 @@ namespace TextRPG.Scene
             Console.WriteLine("1. 던전으로 간다");
             Console.WriteLine("2. 상점으로 간다");
             Console.WriteLine("3. 휴식을 취한다(미구현)");
+            Console.WriteLine("I. 인벤토리 열기");
+            Console.WriteLine("U. 도감열기");
             Console.WriteLine("선택지를 입력하세요 : ");
             Game.PrintInfo();
             
