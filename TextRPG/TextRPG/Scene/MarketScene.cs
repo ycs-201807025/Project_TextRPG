@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG.Items;
 
 namespace TextRPG.Scene
 {
     public class MarketScene : BaseScene
     {
         private ConsoleKey input;
+        private Encyclopedia encyclopedia = new Encyclopedia(); // 도감
 
         public override void Render()
         {
@@ -16,12 +18,21 @@ namespace TextRPG.Scene
             Console.WriteLine();
             Console.WriteLine("1. 마을로 돌아가기");
             Console.WriteLine("2. 상점 둘러보기");
+            Console.WriteLine("I. 인벤토리 열기");
+            Console.WriteLine("U. 도감열기");
             Console.WriteLine("선택지를 입력하세요 : ");
-            
+            Game.PrintInfo();
         }
         public override void Input()
         {
             input = Console.ReadKey(true).Key;
+            // U 키를 눌렀을 때 도감 표시
+            if (input == ConsoleKey.U)
+            {
+                Console.Clear();
+                encyclopedia.DisplayAllItems(); // 도감 출력
+                Util.PressAnyKey("도감을 닫으려면 아무 키나 누르세요.");
+            }
         }
 
         public override void Update()

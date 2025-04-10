@@ -55,6 +55,11 @@ namespace TextRPG
                 curHP = maxHP;
             }
         }
-        
+
+        public void GetGold()
+        {
+            Util.PressAnyKey("골드를 획득했습니다");
+            Gold += 10;
+        }
     }
 }

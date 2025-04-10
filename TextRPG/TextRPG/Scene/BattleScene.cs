@@ -27,8 +27,7 @@ namespace TextRPG.Scene
             Console.WriteLine($"방어력: {monster01.defense}");
             Console.WriteLine("=====================");
             Console.WriteLine("1. 공격");
-            Console.WriteLine("2. 방어");
-            Console.WriteLine("3. 도망");
+            Console.WriteLine("2. 도망");
             Console.WriteLine("선택지를 입력하세요: ");
             Game.PrintInfo();
 
@@ -63,7 +62,7 @@ namespace TextRPG.Scene
                         Render();
                     }
                         break;
-                case ConsoleKey.D3:
+                case ConsoleKey.D2:
                     Util.PressAnyKey("도망 칩니다");
                     Game.ChangeScene("Dungeon01");
                     break;
