@@ -21,7 +21,7 @@ namespace TextRPG.Scene
             Console.WriteLine("무엇을 할까?");
             Console.WriteLine("1. 던전으로 간다");
             Console.WriteLine("2. 상점으로 간다");
-            Console.WriteLine("3. 휴식을 취한다(미구현)");
+            Console.WriteLine("3. 휴식을 취한다");
             Console.WriteLine("I. 인벤토리 열기");
             Console.WriteLine("U. 도감열기");
             Console.WriteLine("선택지를 입력하세요 : ");
@@ -58,8 +58,9 @@ namespace TextRPG.Scene
                     Game.ChangeScene("Market");
                     break;
                 case ConsoleKey.D3:
-                    Util.PressAnyKey("여관으로 갑니다(미구현)");
-                    Game.ChangeScene("");
+                    Util.PressAnyKey("여관으로 갑니다");
+                    Game.Player.Heal(9999);
+                    Util.PressAnyKey("Hp가 모두 회복되었다");
                     break;        
             }
         }

@@ -58,7 +58,7 @@ namespace TextRPG.Scene
                     }
                     break;
                 case ConsoleKey.D2:
-                    Util.PressAnyKey("주변을 둘러봅니다(미구현)");
+                    Util.PressAnyKey("주변을 둘러봅니다");
                     Game.Player.GetGold();
                     break;
                 case ConsoleKey.D3:
