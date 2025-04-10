@@ -11,14 +11,14 @@ namespace TextRPG.Scene
     {
         private ConsoleKey input;
         Random random = new Random();
-        MonsterFactory monsterFactory = new MonsterFactory();
+       
 
         public override void Render()
         {
             Console.WriteLine("현재 있는 장소 : 던전초입");
             Console.WriteLine("나오는 몬스터 : 슬라임");
             Console.WriteLine();
-            Console.WriteLine("1. 앞으로 간다(미구현)");
+            Console.WriteLine("1. 앞으로 간다");
             Console.WriteLine("2. 주변을 둘러본다(미구현)");
             Console.WriteLine("3. 마을로 돌아간다");
             Console.WriteLine("선택지를 입력하세요 : ");
@@ -41,12 +41,9 @@ namespace TextRPG.Scene
                 case ConsoleKey.D1:
                     Util.PressAnyKey("앞으로 나아갑니다");
                     if (random.Next() % 2 == 0)
-                    {
-                        Monster monster01 = monsterFactory.CreateMonster("슬라임");
-                        Console.WriteLine($"몬스터 {monster01.name}이(가) 나타났습니다!");
+                    { 
+                        Console.WriteLine("몬스터가 나타났습니다!");
                         Util.PressAnyKey("전투 시작!");
-                        BattleScene battleScene = (BattleScene)Game.sceneDic["Battle"];
-                        battleScene.SetMonster(monster01);
                         Game.ChangeScene("Battle");
                     }
                     break;

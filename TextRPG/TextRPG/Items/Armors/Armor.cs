@@ -8,7 +8,7 @@ namespace TextRPG.Items.Armors
 {
     public class Armor : Item
     {
-        public int defense;
+        public int defence;
         public int hp;
 
         public override void Use()

@@ -37,7 +37,6 @@ namespace TextRPG.Scene
                 Console.Clear();
                 encyclopedia.DisplayAllItems(); // 도감 출력
                 Util.PressAnyKey("도감을 닫으려면 아무 키나 누르세요.");
-                input = ConsoleKey.NoName; // 입력 초기화
             }
         }
 

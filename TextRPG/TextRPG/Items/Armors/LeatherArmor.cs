@@ -10,11 +10,16 @@ namespace TextRPG.Items.Armors
     {
         public LeatherArmor()
         {
-            defense = 5;
+            defence = 5;
             hp = 10;
             name = "가죽 갑옷";
             description = "가죽으로 만든 갑옷";
             type = "Armor";
+        }
+        public override void Use()
+        {
+            Game.Player.Defence += 5;
+            Game.Player.MaxHP += 10;
         }
     }
 }

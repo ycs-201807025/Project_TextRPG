@@ -13,7 +13,7 @@ namespace TextRPG.Monsters
             Monster monster;
             switch (name)
             {
-                case "슬라임":  monster = new Monster("슬라임",1,10,3,1,1,10); break;
+                case "슬라임":  monster = new Monster("슬라임",1,100,3,1,1,10); break;
 
                 default: return null;
             }

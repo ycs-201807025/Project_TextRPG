@@ -9,27 +9,30 @@ namespace TextRPG.Monsters
     /// <summary>
     /// 몬스터 클래스
     /// </summary>
-    class Monster
+    public class Monster
     {
         public string name;
         public int level;
         public int hp;
         public int attack;
         public int defense;
-        //public int aSpeed;
         public int exp;
         public int gold;
 
-        public Monster(string name, int level, int hp, int attack, int defense, int exp, int gold)
+        public Monster(string name, int level,int hp, int attack, int defense, int exp, int gold)
         {
             this.name = name;
             this.level = level;
             this.hp = hp;
             this.attack = attack;
             this.defense = defense;
-            //this.aSpeed = aSpeed;
             this.exp = exp;
             this.gold = gold;
+        }
+        public void hit(int damage)
+        {
+            hp -= damage;
+    
         }
     }
 }
